@@ -9,7 +9,7 @@ Die Skalierbarkeit und Mehrbenutzer-Nutzung soll diskutiert werden.
 ## Ergebnisbericht
 ### Use Cases
 
-![Use Case Diagram](diagrams\use-cases.png "Use Case Diagram")
+![Use Case Diagram](diagrams/use-cases.png "Use Case Diagram")
 
 ### Aktivitätsdiagramm
 

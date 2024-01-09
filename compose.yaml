@@ -1,0 +1,50 @@
+services:
+  db:
+    build: ./PG_image
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - PGDATA=/data/postgres
+      - POSTGRES_PASSWORD_FILE=run/secrets/db_password
+    secrets:
+      - db_password
+    restart: always
+    volumes:
+      - db_data:/data
+  geoserver:
+    image: docker.osgeo.org/geoserver:2.23.1
+    ports:
+      - 8081:8080
+    volumes:
+      - geoserver_data:/opt/geoserver_data
+  jupyter:
+    build: ./Jupyter
+    ports:
+      - 8888:8888
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: "docker"
+    secrets:
+      - jupyter_token
+  rstudio:
+    build: ./RStudio
+    ports: 
+      - 8787:8787
+    environment:
+      - PASSWORD=password
+    secrets:
+      - rstudio_password
+    volumes: 
+      - /home/r_packages/:/packages
+
+secrets:
+  db_password:
+    file: secrets/db_password.txt
+  rstudio_password:
+    file: secrets/rstudio_password.txt
+  jupyter_token:
+    file: secrets/jupyter_token.txt
+
+volumes:
+  db_data:
+  geoserver_data:

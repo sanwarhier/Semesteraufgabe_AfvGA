@@ -1,3 +1,5 @@
+#example script for using in JupyterNotebook
+
 import geopandas
 import requests
 import rasterio

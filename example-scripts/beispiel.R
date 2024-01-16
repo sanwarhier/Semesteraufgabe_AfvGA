@@ -1,11 +1,4 @@
-#install.packages("tidyverse")
-#install.packages("ows4R")
-#install.packages("Rcpp", repos="https://rcppcore.github.io/drat")
-#install.packages("units")
-#install.packages("sf")
-#install.packages("terra")
-#install.packages("raster")
-#install.packages("tmap")
+#example script for using in RStudio
 
 library(sf) # simple features packages for handling vector GIS data
 library(httr) # generic webservice package

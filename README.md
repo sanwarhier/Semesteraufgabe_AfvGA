@@ -31,6 +31,7 @@ Durch die Nutzung von Docker-Containern lässt sich die verteilte Anwendung rela
 Der Zugriff auf die Datenbank im Geoserver muss noch einmalig manuell konfiguriert werden. Dazu müssen ein Datastore und die gewünschten Layer angelegt werden. Beim Neustarten eines Containers sind diese Schritte jedoch durch die Nutzung von Volumes nicht mehr nötig.
 
 Das einmalige Konfigurieren des GeoServers könnte durch ein Skript vermieden werden, das sich bei Erstellung des GeoServer-Containers mit der GeoServer-API verbindet. Das war leider zeitlich im Rahmen der Projektarbeit nicht mehr möglich.
+Ansätze dafür sind im Ordner `geoserver-api-scripts` zu finden.
 
 ### Sicherheit
 Passwörter für den Zugriff auf JupyterNotebook, GeoServer, PostgreSQL und RStudio werden für die Erstellung der Container als Umgebungsvariable übergeben. Um die Passwörter nicht öffentlich sichtbar in die `compose.yaml` schreiben zu müssen, können sogenannte __Secrets__ verwendet werden. 
